@@ -1,8 +1,9 @@
 <!-- TODO -->
 COMPONENTS
-- header (nav - catalog, logIn, register, )
+- header (nav - catalog,// logIn, register, // add-book, favourites, logOut)
 - footer
 - pages
+  - home
   - catalog
     - details
   - my favourite books
@@ -18,7 +19,8 @@ SERVICES
 
 PIPES
 
-
+INTERFACES
+  - cardBook
 
 
 
