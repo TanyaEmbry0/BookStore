@@ -10,6 +10,10 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CatalogComponent } from './components/catalog/catalog.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
+import { BookDetailsComponent } from './components/book-details/book-details.component';
+import { ErrorComponent } from './components/error/error.component';
+import { BookCardComponent } from './components/book-card/book-card.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { CatalogComponent } from './components/catalog/catalog.component';
     RegisterComponent,
     HomeComponent,
     NotFoundComponent,
-    CatalogComponent
+    CatalogComponent,
+    FavoritesComponent,
+    BookDetailsComponent,
+    ErrorComponent,
+    BookCardComponent
   ],
   imports: [
     BrowserModule,
