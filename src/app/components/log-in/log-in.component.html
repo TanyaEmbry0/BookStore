@@ -1,1 +1,49 @@
-<p>log-in works!</p>
+<!-- <button class="btn btn-main">LogIn</button>
+<ng-template #content> -->
+  <div class="modal-head">
+    <div class="d-flex justify-content-between align-items-center">
+      <span class="modal-head-title">LOG IN</span>
+      <button class="btn btn-main" aria-label="Close" >
+        <span class="modal-close-btn">X</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="modal-body">
+    <form method="post" >
+      <div class="bold-line"></div>
+      <div class="container">
+        <div class="form-window">
+          <div class="content">
+            <div class="form-title">Hello There!</div>
+            <div class="input-fields">
+              <input
+                type="text"
+                placeholder="E-mail or username"
+                class="input-line full-width"
+              />
+
+              <input
+                type="password"
+                autocomplete="new-password"
+                placeholder="Password"
+                class="pass input-line full-width"
+              />
+
+            </div>
+            <div>
+
+                <div class="">
+                  <button type="submit" class="ghost-round full-width btn btn-border">
+                    Log in
+                  </button>
+                </div>
+              <!-- <button (click)="submitLogin()" type="submit" [disabled]="!loginForm.valid" class='ghost-round full-width'>Log in</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+<!-- </ng-template> -->
+
