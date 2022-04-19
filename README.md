@@ -7,7 +7,7 @@ COMPONENTS
   - catalog
     - details
   - my favourite books
-  - 
+  
 
 - log in
 - register 
