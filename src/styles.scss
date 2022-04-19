@@ -20,7 +20,9 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
+  font-weight: normal;
 	vertical-align: baseline;
+  font-family: 'Montserrat', sans-serif;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -46,5 +48,20 @@ table {
 	border-spacing: 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////
-$dark-gray: #303030;
+
+// BUTTONS
+.btn{
+
+}
+.btn-main-menu{
+  background-color: transparent;
+  color: #000;
+  border: none;
+  border-radius: 0;
+  font-size: 25px;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
