@@ -9,8 +9,9 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
   },
-  { path: '/catalog', component: CatalogComponent },
-
+  {
+    path: 'catalog',
+    component: CatalogComponent },
   {
     path: '**',
     component: NotFoundComponent,
