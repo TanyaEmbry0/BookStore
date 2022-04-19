@@ -14,7 +14,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { BookCardComponent } from './components/book-card/book-card.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavigationComponent } from './components/navigation/navigation.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,12 +29,15 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     BookDetailsComponent,
     ErrorComponent,
     BookCardComponent,
-    NavigationComponent
+    NavigationComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

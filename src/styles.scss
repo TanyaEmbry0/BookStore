@@ -48,8 +48,53 @@ table {
 	border-spacing: 0;
 }
 
+// MODALS
+.screen-50 .modal-dialog {
+  max-width: calc(50% - 38px);
+}
+
+.slide-right.fade .modal-dialog {
+-webkit-transform: translateX(20%);
+-moz-transform: translateX(20%);
+-ms-transform: translateX(20%);
+transform: translateX(20%);
+opacity: 0;
+-webkit-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+-moz-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+}
+
+.slide-right.show .modal-dialog {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1 !important;
+}
+
+.modal-head-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+.modal-head-title, .modal-close-btn{
+  font-weight: bold;
+  color: #303030;
+}
+
 
 // BUTTONS
+.btn:active, .btn:focus{
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn:hover{
+  border-bottom: 1px solid #ddd;
+}
+
 .btn-main-menu{
   background-color: transparent;
   color: #000;
@@ -60,3 +105,11 @@ table {
   transition: all .2s ease;
 }
 
+
+// VALIDATION MESSAGE
+.validation-text{
+  color: #f00;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 5px;
+}

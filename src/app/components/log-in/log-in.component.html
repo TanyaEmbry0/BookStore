@@ -1,16 +1,18 @@
-<button (click)="open()" class="btn btn-main-menu">LogIn</button>
+<button (click)="open(content)" class="btn btn-main-menu">Log In</button>
 <ng-template #content>
   <div class="modal-head">
-    <div class="d-flex justify-content-between align-items-center">
+    <div class=" modal-head-content">
       <span class="modal-head-title">LOG IN</span>
-      <button class="btn btn-main" aria-label="Close" >
+      <button class="btn btn-main" aria-label="Close" (click)="close()" >
         <span class="modal-close-btn">X</span>
       </button>
     </div>
   </div>
 
   <div class="modal-body">
-    <form method="post" >
+    <form method="post" (ngSubmit)="submitLogin()"
+    [formGroup]="loginForm"
+    autocomplete="off" >
       <div class="bold-line"></div>
       <div class="container">
         <div class="form-window">
@@ -19,16 +21,37 @@
             <div class="input-fields">
               <input
                 type="text"
-                placeholder="E-mail or username"
+                placeholder="E-mail"
                 class="input-line full-width"
+                formControlName="email"
               />
+              <span
+                *ngIf="
+                  (loginForm.controls['email'].dirty &&
+                    loginForm.hasError('required', 'email')) ||
+                  (loginForm.controls['email'].touched &&
+                    loginForm.hasError('required', 'email'))
+                "class="validation-text">
+                E-mail is required!
+              </span>
 
               <input
                 type="password"
                 autocomplete="new-password"
                 placeholder="Password"
                 class="pass input-line full-width"
+                formControlName="password"
               />
+              <span
+                *ngIf="
+                  (loginForm.controls['password'].dirty &&
+                    loginForm.hasError('required', 'password')) ||
+                  (loginForm.controls['password'].touched &&
+                    loginForm.hasError('required', 'password'))
+                " class="validation-text">
+                Password is required!
+              </span>
+
 
             </div>
             <div>
@@ -38,7 +61,7 @@
                     Log in
                   </button>
                 </div>
-              <!-- <button (click)="submitLogin()" type="submit" [disabled]="!loginForm.valid" class='ghost-round full-width'>Log in</button> -->
+
             </div>
           </div>
         </div>
