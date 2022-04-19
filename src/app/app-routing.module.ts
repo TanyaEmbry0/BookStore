@@ -11,15 +11,18 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
   },
- { path: 'home', component: HomeComponent},
-  { path: 'favorites',
-   component: FavoritesComponent },
+  { path: 'home', component: HomeComponent },
+
+  { path: 'favorites', component: FavoritesComponent },
   {
     path: 'catalog',
     component: CatalogComponent,
-    children: [{
-      path: "details/:id", component: BookDetailsComponent
-    }],
+    children: [
+      {
+        path: 'details/:id',
+        component: BookDetailsComponent,
+      },
+    ],
   },
   {
     path: '**',

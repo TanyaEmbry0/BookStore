@@ -13,6 +13,7 @@ import { BookDetailsComponent } from './components/book-details/book-details.com
 import { ErrorComponent } from './components/error/error.component';
 import { BookCardComponent } from './components/book-card/book-card.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FavoritesComponent,
     BookDetailsComponent,
     ErrorComponent,
-    BookCardComponent
+    BookCardComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
