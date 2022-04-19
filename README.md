@@ -21,9 +21,35 @@ PIPES
 
 INTERFACES
   - cardBook
+  data from back-end: 
+  "_id": "",
+        "title": "",
+        "author": "",
+        "genre": "",
+        "description": "",
+        "imageUrl": "",
+        "likes": [],
+        "addedBy": "",
+        "comments": [],
+        "__v": 12
+
+BACK-END: 
+GET ALL BOOKS :GET https://murmuring-cliffs-61613.herokuapp.com/books;
+GET SINGLE BOOK : GET https://murmuring-cliffs-61613.herokuapp.com/books/61c1d50a1168b32c49c0c32c
+
+REGISTER:  POST https://murmuring-cliffs-61613.herokuapp.com/auth/register
+-body: {"email": "desinkata@abv.bg", "password": "123456", "rePass": "123456"}
+-pattern: email: /[a-zA-Z]+\@[a-zA-Z]+\.[a-zA-Z]+/g
+-pattern password: type: String,
+    minlength: [4, "password must be minimum 4 characters long"],
+    required: [true, "Password is required!"],
+
+LOGIN: POST https://murmuring-cliffs-61613.herokuapp.com/auth/login
+-body: {"email": "desinkata@abv.bg", "password": "123456" }  
 
 
-
+CREATE BOOK: https://murmuring-cliffs-61613.herokuapp.com/books/create
+-https pattern for image: /^https?/
 
 
 # BookStore
