@@ -7,6 +7,9 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { RegisterComponent } from './components/register/register.component';
+import { HomeComponent } from './components/home/home.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { CatalogComponent } from './components/catalog/catalog.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { RegisterComponent } from './components/register/register.component';
     NavigationComponent,
     FooterComponent,
     LogInComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent,
+    NotFoundComponent,
+    CatalogComponent
   ],
   imports: [
     BrowserModule,
