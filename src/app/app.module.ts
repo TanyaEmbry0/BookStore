@@ -15,6 +15,8 @@ import { BookCardComponent } from './components/book-card/book-card.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptors } from './interceptors/auth.interceptors';
 
 @NgModule({
   declarations: [
@@ -37,9 +39,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptors, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

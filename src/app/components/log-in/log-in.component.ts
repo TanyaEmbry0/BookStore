@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbModal, NgbModalRef } from "@ng-bootstrap/ng-bootstrap";
+import { take } from 'rxjs';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
@@ -14,7 +16,7 @@ export class LogInComponent implements OnInit {
   loginForm = this.fb.group({
     email: new FormControl('', [
       Validators.required,
-      Validators.pattern('/[a-zA-Z]+\@[a-zA-Z]+\.[a-zA-Z]+/g')
+      // Validators.pattern('/[a-zA-Z]+\@[a-zA-Z]+\.[a-zA-Z]+/g')
     ]),
     password: new FormControl('',[
       Validators.required,
@@ -25,7 +27,8 @@ export class LogInComponent implements OnInit {
 
 
   constructor(private modalService: NgbModal,
-              private fb: FormBuilder) { }
+              private fb: FormBuilder,
+              private authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
 
@@ -51,10 +54,17 @@ export class LogInComponent implements OnInit {
       return;
     }
 
-    //TODO  authentication service....
+    //authentication service....
+
+    this.authenticationService.login(this.loginForm).pipe(take(1)).subscribe({
+      next: (response) => {
+        this.close()
+      },
+      error: (error) => {
+        alert(error.error.message)}
+   });
 
   }
-
 
 
 }

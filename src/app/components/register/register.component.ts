@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { take } from 'rxjs';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +15,7 @@ export class RegisterComponent implements OnInit {
   registerForm = this.fb.group({
     email: new FormControl('', [
       Validators.required,
-      Validators.pattern('/[a-zA-Z]+\@[a-zA-Z]+\.[a-zA-Z]+/g')
+      // Validators.pattern('/[a-zA-Z]+\@[a-zA-Z]+\.[a-zA-Z]+/g')
     ]),
     password: new FormControl('',[
       Validators.required,
@@ -26,7 +28,8 @@ export class RegisterComponent implements OnInit {
 
 
   constructor(private modalService: NgbModal,
-              private fb: FormBuilder) { }
+              private fb: FormBuilder,
+              private authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
   }
@@ -48,11 +51,20 @@ export class RegisterComponent implements OnInit {
   submitRegister(): void {
     if(this.registerForm.invalid){
       this.registerForm.markAllAsTouched();
+      console.log(123);
+
       return;
     }
 
-    //TODO  authentication service....
+    //authentication service....
 
+    this.authenticationService.register(this.registerForm).pipe(take(1)).subscribe({
+      next: (response) => {
+        this.close()
+      },
+      error: (error) => {
+        alert(error.error.message)}
+   });
   }
 
 

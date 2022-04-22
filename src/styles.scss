@@ -20,7 +20,7 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-  font-weight: normal;
+  font-weight: 600;
 	vertical-align: baseline;
   font-family: 'Montserrat', sans-serif;
 }
@@ -86,6 +86,9 @@ transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
 
 
 // BUTTONS
+.btn{
+  font-weight: bold!important ;
+}
 .btn:active, .btn:focus{
   outline: none !important;
   box-shadow: none !important;
@@ -100,11 +103,14 @@ transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
   color: #000;
   border: none;
   border-radius: 0;
-  font-size: 25px;
+  // font-size: 25px;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
 }
 
+.f-b{
+  font-weight: bold;
+}
 
 // VALIDATION MESSAGE
 .validation-text{
@@ -112,4 +118,9 @@ transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
   font-size: 12px;
   font-weight: bold;
   margin-top: 5px;
+}
+
+// PAGES
+.page-content{
+  height: calc(100vh - 152px);
 }
