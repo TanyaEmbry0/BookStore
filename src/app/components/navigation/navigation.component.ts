@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { BookService } from 'src/app/services/book.service';
+import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-navigation',
@@ -8,24 +11,29 @@ import { BookService } from 'src/app/services/book.service';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-  isUserLoggedIn: boolean | undefined;
+  isUserLoggedIn: boolean  = false;
 
 
-  constructor(private bookService: BookService,
-              private authenticationService: AuthenticationService) { }
+  constructor(private authenticationService: AuthenticationService,
+    private router: Router) { }
 
   ngOnInit(): void {
-      if(this.authenticationService.isUserLoggedIn()){
-        this.isUserLoggedIn = true;
-      }else{
-        this.isUserLoggedIn = false;
-      };
+      this.checkUserLoggedIn();
+  }
 
+
+  checkUserLoggedIn(): void {
+    if(this.authenticationService.isUserLoggedIn()){
+      this.isUserLoggedIn = true;
+    }else{
+      this.isUserLoggedIn = false;
+    };
   }
 
   logout(): void {
     this.authenticationService.logout();
     this.isUserLoggedIn = false;
+    this.router.navigate(['/home']);
   }
 
   // test(){

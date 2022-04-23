@@ -12,8 +12,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 
 export class AuthenticationService {
-
-
+  isUserLoggedInState: boolean | undefined;
 
   constructor(private httpClient: HttpClient,
               private cookieService: CookieService) { }
@@ -23,10 +22,14 @@ export class AuthenticationService {
     .pipe(
       map((response) =>{
         this.cookieService.set('token', response.token);
+        this.isUserLoggedIn();
         return response;
     })
+
     );
+
   }
+
 
   isUserLoggedIn(): boolean {
     return this.cookieService.check('token');
@@ -38,7 +41,9 @@ export class AuthenticationService {
 
   logout() {
     this.cookieService.delete('token');
+    this.isUserLoggedIn();
   }
+
 
 }
 

@@ -11,11 +11,13 @@
         <li class="nav-item">
           <button class="btn btn-main-menu" routerLink="/catalog">Catalog</button>
         </li>
-        <li class="nav-item" *ngIf="!isUserLoggedIn">
-          <app-log-in ></app-log-in>
+        <li class="nav-item">
+           <!-- todo -->
+          <app-log-in *ngIf="!isUserLoggedIn"></app-log-in>
         </li>
         <li class="nav-item" *ngIf="!isUserLoggedIn">
           <app-register ></app-register>
+          <!-- <a class="nav-link" href="#">Register</a> -->
         </li>
         <li class="nav-item" *ngIf="isUserLoggedIn">
             <button class="btn btn-main-menu" href="#">Add Book</button>

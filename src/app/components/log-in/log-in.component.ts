@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbModal, NgbModalRef } from "@ng-bootstrap/ng-bootstrap";
-import { take } from 'rxjs';
+import { Subscription, take } from 'rxjs';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 @Component({
   selector: 'app-log-in',
@@ -11,7 +11,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 export class LogInComponent implements OnInit {
 
   modalReference?: NgbModalRef;
-
+  subscription?: Subscription;
 
   loginForm = this.fb.group({
     email: new FormControl('', [
@@ -24,7 +24,6 @@ export class LogInComponent implements OnInit {
     ]),
 
   });
-
 
   constructor(private modalService: NgbModal,
               private fb: FormBuilder,
@@ -51,20 +50,28 @@ export class LogInComponent implements OnInit {
   submitLogin(): void {
     if(this.loginForm.invalid){
       this.loginForm.markAllAsTouched();
+
       return;
     }
 
-    //authentication service....
-
-    this.authenticationService.login(this.loginForm).pipe(take(1)).subscribe({
+    this.subscription = this.authenticationService.login(this.loginForm)
+    .pipe(take(1))
+    .subscribe({
       next: (response) => {
         this.close()
       },
+
       error: (error) => {
         alert(error.error.message)}
-   });
+   })
 
+  }
+
+  ngOnDestroy(): void {
+    this.subscription?.unsubscribe();
+    this.authenticationService.isUserLoggedIn();
   }
 
 
 }
+
