@@ -9,11 +9,13 @@ import { BookService } from 'src/app/services/book.service';
 })
 export class BookCardComponent implements OnInit {
 @Input() book: IBook | undefined;
+id: string | undefined;
 
 
   constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
+   this.id = this.book?._id;
   }
 
 

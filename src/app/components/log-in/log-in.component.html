@@ -1,18 +1,26 @@
-<button (click)="open(content)" class="btn btn-main-menu">Log In</button>
+<button
+  (click)="open(content)"
+  class="btn btn-main-menu"
+  style="cursor: pointer"
+>
+  Log In
+</button>
 <ng-template #content>
   <div class="modal-head">
-    <div class=" modal-head-content">
+    <div class="modal-head-content">
       <span class="modal-head-title">LOG IN</span>
-      <button class="btn btn-main" aria-label="Close" (click)="close()" >
+      <button class="btn btn-main" aria-label="Close" (click)="close()">
         <span class="modal-close-btn">X</span>
       </button>
     </div>
   </div>
-
   <div class="modal-body">
-    <form method="post" (ngSubmit)="submitLogin()"
-    [formGroup]="loginForm"
-    autocomplete="off" >
+    <form
+      method="post"
+      (ngSubmit)="submitLogin()"
+      [formGroup]="loginForm"
+      autocomplete="off"
+    >
       <div class="bold-line"></div>
       <div class="container">
         <div class="form-window">
@@ -31,10 +39,11 @@
                     loginForm.hasError('required', 'email')) ||
                   (loginForm.controls['email'].touched &&
                     loginForm.hasError('required', 'email'))
-                "class="validation-text">
+                "
+                class="validation-text"
+              >
                 E-mail is required!
               </span>
-
               <input
                 type="password"
                 autocomplete="new-password"
@@ -48,20 +57,21 @@
                     loginForm.hasError('required', 'password')) ||
                   (loginForm.controls['password'].touched &&
                     loginForm.hasError('required', 'password'))
-                " class="validation-text">
+                "
+                class="validation-text"
+              >
                 Password is required!
               </span>
-
-
             </div>
             <div>
-
-                <div class="">
-                  <button type="submit" class="ghost-round full-width btn btn-border">
-                    Log in
-                  </button>
-                </div>
-
+              <div class="">
+                <button
+                  type="submit"
+                  class="ghost-round full-width btn btn-border"
+                >
+                  Log in
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -69,4 +79,3 @@
     </form>
   </div>
 </ng-template>
-

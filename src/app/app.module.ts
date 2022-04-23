@@ -17,6 +17,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptors } from './interceptors/auth.interceptors';
+import { CatalogListComponent } from './catalog-list/catalog-list.component';
+import { DropdownDirective } from './directives/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { AuthInterceptors } from './interceptors/auth.interceptors';
     ErrorComponent,
     BookCardComponent,
     NavigationComponent,
+    CatalogListComponent,
+    DropdownDirective
 
   ],
   imports: [

@@ -15,11 +15,11 @@ export class BookService{
       return this.httpClient.get<IBook>('https://murmuring-cliffs-61613.herokuapp.com/books');
     }
 
-    getBook(id: string) {
+    getBook(id: string) : Observable<any>{
       return this.httpClient.get<IBook>(`https://murmuring-cliffs-61613.herokuapp.com/books/${id}`);
     }
 
-    addBook(): Observable<any> {
+    addBook(){
       return this.httpClient.post('https://murmuring-cliffs-61613.herokuapp.com/books/create', {});
     }
 

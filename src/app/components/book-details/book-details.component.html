@@ -1,1 +1,45 @@
-<p>book-details works!</p>
+<div class="row">
+  <div class="col-xs-12">
+    <img
+      [src]="book?.imageUrl"
+      alt=".."
+      class="img-responsive"
+      style="max-height: 300px; border-radius: 7px"
+    />
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>Title: {{ book?.title }}</h1>
+  </div>
+  <div class="col-xs-12">
+    <h4>Author: {{ book?.author }}</h4>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h4>Description: {{ book?.description }}</h4>
+  </div>
+  <div class="col-xs-12">
+    <h4>Author: {{ book?.author }}</h4>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+      <button class="btn btn-primary" type="button"(click)="onEditBook()">Edit Book</button>
+      <button class="btn btn-danger" type="button"(click)="onDeleteBook()">Delete Book</button>
+    <!-- <div class="btn-group" appDropdown>
+        <button type="button" class="btn manage btn-primary dropdown-toggle">
+            Manage Book <span class="caret"></span>
+          </button>
+        <ul class="dropdown-menu">
+        <li>
+          <a style="cursor: pointer" (click)="onEditBook()">Edit Book</a>
+        </li>
+        <li>
+          <a style="cursor: pointer" (click)="onDeleteBook()">Delete Book</a>
+        </li>
+      </ul>
+    </div> -->
+  </div>
+</div>

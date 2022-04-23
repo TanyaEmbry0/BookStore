@@ -25,10 +25,8 @@ export class AuthenticationService {
         this.isUserLoggedIn();
         return response;
     })
-
-    );
-
-  }
+ );
+}
 
 
   isUserLoggedIn(): boolean {

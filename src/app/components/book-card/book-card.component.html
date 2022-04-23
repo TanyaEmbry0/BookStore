@@ -8,7 +8,7 @@
     <div class="card-body">
       <p class="card-text">Title: <span class="text">{{book?.title}}</span> </p>
       <p class="card-text">Author: <span class="text">{{book?.author}}</span> </p>
-      <button class="btn" >Details</button>
+      <button class="btn" [routerLink]='["details/", id]'>Details</button>
     </div>
   </div>
 </div>

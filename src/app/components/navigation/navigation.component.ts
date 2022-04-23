@@ -20,8 +20,6 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
       this.checkUserLoggedIn();
   }
-
-
   checkUserLoggedIn(): void {
     if(this.authenticationService.isUserLoggedIn()){
       this.isUserLoggedIn = true;
