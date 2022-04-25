@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { BookService } from 'src/app/services/book.service';
-import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Router} from '@angular/router';
 import { Observable } from 'rxjs';
 
 
@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class NavigationComponent implements OnInit {
   isUserLoggedIn: boolean  = false;
+  test = this.authenticationService.isLoggedIn;
 
 
   constructor(private authenticationService: AuthenticationService,

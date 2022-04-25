@@ -5,8 +5,6 @@ import { IUserInterface } from "../interfaces/user.interface";
 import { map, Observable, Subject } from "rxjs";
 import { CookieService } from 'ngx-cookie-service';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -28,6 +26,10 @@ export class AuthenticationService {
  );
 }
 
+get isLoggedIn(): boolean {
+  let authToken = this.cookieService.get('access_token');
+  return authToken !== null ? true : false;
+}
 
   isUserLoggedIn(): boolean {
     return this.cookieService.check('token');

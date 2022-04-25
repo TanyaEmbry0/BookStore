@@ -12,15 +12,15 @@
           <h5>Genre: <span class="details-text">{{book?.genre}}</span></h5>
           <h5>Description: <span class="details-text">{{book?.description}}</span></h5>
           <div class="row">
-            <div class="col-xs-12 button-container">
-                <button class="btn btn-main-menu" type="button"(click)="onEditBook()">Edit Book</button>
-                <button class="btn btn-main-menu text-danger" type="button"(click)="onDeleteBook()">Delete Book</button>
+            <div class="button-container">
+                <button class="btn-main mr-3" type="button"(click)="onEditBook()">Edit Book</button>
+                <button class="btn-main text-danger" type="button"(click)="onDeleteBook()">Delete Book</button>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <button class="btn btn-main-menu back" routerLink="/catalog">Back to catalog</button>
+    <button class="btn-main back" routerLink="/catalog">Back to catalog</button>
   </div>
 
 
