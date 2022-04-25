@@ -20,8 +20,13 @@ export class BookService{
       return this.httpClient.get<IBook>(`https://murmuring-cliffs-61613.herokuapp.com/books/${id}`);
     }
 
-    addBook(options: {}){
-      return this.httpClient.post('https://murmuring-cliffs-61613.herokuapp.com/books/create', {options});
+    addBook(body: CreatedBook, token: string){
+      return this.httpClient.post('https://murmuring-cliffs-61613.herokuapp.com/books/create', {
+        headers: { "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+        },
+        body: body
+      } );
     }
 
     deleteBook(id: string) {

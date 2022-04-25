@@ -64,21 +64,21 @@ if (this.addBookForm.invalid) {
       addedBy: this.addedBy,
     };
   
-    const options = {
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${this.token}`,
-      },
-      body: this.newBook,
-    };
+    // const options = {
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     Authorization: `Bearer ${this.token}`,
+    //   },
+    //   body: this.newBook,
+    // };
    
-    this.subscription = this.bookServices.addBook(options).subscribe({
+    this.subscription = this.bookServices.addBook(this.newBook, this.token).subscribe({
       next: (response) => {
         console.log(response);
       },
 
       error: (error) => {
-        alert(error.error.message);
+        alert(error.response.message);
       },
     });
   }
