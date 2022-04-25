@@ -6,10 +6,10 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-          <button class="btn btn-main-menu" routerLink="/" style="cursor:pointer;">Home</button>
+          <button class="btn btn-main-menu" routerLink="/" >Home</button>
         </li>
         <li class="nav-item">
-          <button class="btn btn-main-menu" routerLink="/catalog" style="cursor:pointer;">Catalog</button>
+          <button class="btn btn-main-menu" routerLink="/catalog" >Catalog</button>
         </li>
         <li class="nav-item">
            <!-- todo -->
@@ -20,13 +20,13 @@
           <!-- <a class="nav-link" href="#">Register</a> -->
         </li>
         <li class="nav-item" *ngIf="isUserLoggedIn">
-            <button class="btn btn-main-menu" style="cursor:pointer">Add Book</button>
+            <button class="btn btn-main-menu" >Add Book</button>
           </li>
           <!-- <li class="nav-item">
             <button class="nav-link" href="#" (click)="test()" >Add Book TEST</button>
           </li> -->
           <li class="nav-item" *ngIf="isUserLoggedIn">
-            <button class="btn btn-main-menu" routerLink="/favorites" style="cursor:pointer">Favorites</button>
+            <button class="btn btn-main-menu" routerLink="/favorites">Favorites</button>
           </li>
           <li class="nav-item" *ngIf="isUserLoggedIn">
             <button class="btn btn-main-menu" href="#" (click)="logout()" >Logout</button>

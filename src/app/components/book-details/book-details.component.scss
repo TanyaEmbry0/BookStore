@@ -1,6 +1,44 @@
-.manage{
-    color: black;
-    background-color: #20A67B;
-  
+.btn-group{
+  cursor:pointer;
 }
-.btn-group{ cursor:pointer;} 
+
+.img-container{
+  padding: 0;
+  -webkit-box-shadow: 2px 2px 16px 5px #999999;
+  box-shadow: 2px 2px 16px 5px #999999;
+  z-index: 2;
+}
+
+.details-container{
+  position: relative;
+  right:20px;
+  padding: 0;
+  -moz-box-shadow: 10px 10px 5px #999999;
+  -webkit-box-shadow: 10px 10px 5px #999999;
+  box-shadow: 4px 4px 5px #999999;
+  .title-header{
+    background-color: #FBEDD2;
+    padding: 1rem 2.5rem;
+    h2{
+      margin: 0;
+      font-weight:bold;
+    }
+  }
+  .details-content{
+    padding: 2rem 1rem 2.5rem 2.5rem;
+    .details-text{
+      font-weight: bold;
+    }
+    .button-container{
+      display: flex;
+      justify-content: end;
+    }
+  }
+
+}
+
+.back{
+  position: absolute;
+  right:20px;
+  bottom:80px;
+}

@@ -1,10 +1,8 @@
 <div class="d-flex">
-
   <div class="card" >
     <div class="img-books-container">
-      <img class="card-img-top" src="{{book?.imageUrl}}" alt="Card image cap">
+      <img class="card-img-top" src="{{book?.imageUrl}}" [routerLink]='["details/", id]' alt="Card image cap">
     </div>
-
     <div class="card-body">
       <p class="card-text">Title: <span class="text">{{book?.title}}</span> </p>
       <p class="card-text">Author: <span class="text">{{book?.author}}</span> </p>
