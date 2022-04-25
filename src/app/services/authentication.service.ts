@@ -20,6 +20,7 @@ export class AuthenticationService {
     .pipe(
       map((response) =>{
         this.cookieService.set('token', response.token);
+        this.cookieService.set( 'id', response.userId)
         this.isUserLoggedIn();
         return response;
     })
@@ -43,7 +44,14 @@ get isLoggedIn(): boolean {
     this.cookieService.delete('token');
     this.isUserLoggedIn();
   }
-
+   getUserId(): string{
+    return this.cookieService.get('id');
+  
+  }
+  getUserToken(): string{
+    return this.cookieService.get('token');
+  
+  }
 
 }
 

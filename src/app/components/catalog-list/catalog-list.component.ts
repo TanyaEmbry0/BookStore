@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IBook } from '../interfaces/book.interface';
-import { BookService } from '../services/book.service';
+import { IBook } from '../../interfaces/book.interface';
+import { BookService } from '../../services/book.service';
 
 @Component({
   selector: 'app-catalog-list',

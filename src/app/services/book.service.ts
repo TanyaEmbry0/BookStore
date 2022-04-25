@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IBook } from '../interfaces/book.interface';
+import { CreatedBook } from '../interfaces/createdBook.interface.';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +20,8 @@ export class BookService{
       return this.httpClient.get<IBook>(`https://murmuring-cliffs-61613.herokuapp.com/books/${id}`);
     }
 
-    addBook(){
-      return this.httpClient.post('https://murmuring-cliffs-61613.herokuapp.com/books/create', {});
+    addBook(options: {}){
+      return this.httpClient.post('https://murmuring-cliffs-61613.herokuapp.com/books/create', {options});
     }
 
     deleteBook(id: string) {

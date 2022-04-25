@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CatalogListComponent } from './catalog-list/catalog-list.component';
+import { CatalogListComponent } from './components/catalog-list/catalog-list.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { CatalogComponent } from './components/catalog/catalog.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AddBookComponent } from './components/add-book/add-book.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
 
   { path: 'favorites', component: FavoritesComponent },
+  {path: 'addBook', component: AddBookComponent},
   {
     path: 'catalog',
     component: CatalogComponent,

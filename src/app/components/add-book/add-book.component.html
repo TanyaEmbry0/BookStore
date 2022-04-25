@@ -1,0 +1,94 @@
+<div class="modal-body">
+  <form
+    [formGroup]="addBookForm"  
+    method="post"
+    (ngSubmit)="onAddBookSubmit()"
+    autocomplete="off"
+  >
+    <div class="bold-line"></div>
+    <div class="container">
+      <div class="form-window">
+        <div class="content">
+          <div class="form-title">Add New Book!</div>
+          <div class="input-fields">
+            <input
+              type="text"
+              placeholder="Book Title"
+              class="input-line full-width"
+              formControlName="title"
+            />
+
+            <span
+              *ngIf="
+                !addBookForm.controls['title'].valid &&
+                addBookForm.controls['title'].touched
+            " class="validation-text"
+              >Book Title is required!
+            </span>
+            <input
+              type="text"
+              autocomplete="Book Author"
+              placeholder="Book Author"
+              class="input-line full-width"
+              formControlName="author"
+            />
+            <span *ngIf="
+            !addBookForm.controls['author'].valid &&
+            addBookForm.controls['author'].touched
+        " class="validation-text"> Author is required! </span>
+            <input
+              type="text"
+              autocomplete="Book Genre"
+              placeholder="Book Genre"
+              class="input-line full-width"
+              formControlName="genre"
+            />
+            <span *ngIf="
+            !addBookForm.controls['genre'].valid &&
+            addBookForm.controls['genre'].touched
+        " class="validation-text"> Genre is required! </span>
+            <textarea
+              type="text"
+              autocomplete="Book Description"
+              placeholder="Book Description"
+              class="input-line full-width"
+              formControlName="description"
+            ></textarea>
+
+            <span *ngIf="
+            addBookForm.controls['description'].invalid &&
+            addBookForm.controls['description'].hasError('required') &&
+            addBookForm.controls['description'].touched
+        "  class="validation-text"> Description is required! </span>
+        <span *ngIf="
+             addBookForm.controls['description'].invalid &&
+            addBookForm.controls['description'].hasError('minlength') &&
+            addBookForm.controls['description'].touched
+        "  class="validation-text"> Description must be at least 20 symbols</span>
+            <input
+              type="text"
+              autocomplete="Book Image Url"
+              placeholder="Book Image Url"
+              class="input-line full-width"
+              formControlName="imageUrl"
+            />
+
+            <span *ngIf=" addBookForm.controls['imageUrl'].invalid &&
+        addBookForm.controls['imageUrl'].touched" class="validation-text"> Image Url is required! </span>
+          </div>
+          <div>
+            <div class="">
+              <button
+                type="submit"
+                class="ghost-round full-width btn btn-border"
+        
+              >
+                Add Book
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
