@@ -1,11 +1,10 @@
-<div class="modal-body">
+<div class="page-content">
   <form
-    [formGroup]="addBookForm"  
+    [formGroup]="addBookForm"
     method="post"
     (ngSubmit)="onAddBookSubmit()"
-    autocomplete="off"
-  >
-    <div class="bold-line"></div>
+    autocomplete="off">
+
     <div class="container">
       <div class="form-window">
         <div class="content">
@@ -15,8 +14,7 @@
               type="text"
               placeholder="Book Title"
               class="input-line full-width"
-              formControlName="title"
-            />
+              formControlName="title"/>
 
             <span
               *ngIf="
@@ -81,7 +79,7 @@
               <button
                 type="submit"
                 class="ghost-round full-width btn btn-border"
-        
+
               >
                 Add Book
               </button>

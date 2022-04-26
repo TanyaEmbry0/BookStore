@@ -1,10 +1,4 @@
-<button
-  (click)="open(content)"
-  class="btn btn-main-menu"
-  style="cursor: pointer"
->
-  Register
-</button>
+<button (click)="open(content)" class="btn btn-main-menu">Register</button>
 <ng-template #content>
   <div class="modal-head">
     <div class="modal-head-content">
@@ -19,8 +13,7 @@
       method="post"
       (ngSubmit)="submitRegister()"
       [formGroup]="registerForm"
-      autocomplete="off"
-    >
+      autocomplete="off">
       <div class="bold-line"></div>
       <div class="container">
         <div class="form-window">
@@ -31,18 +24,13 @@
                 type="text"
                 placeholder="E-mail"
                 class="input-line full-width"
-                formControlName="email"
-              />
-              <span
-                *ngIf="
+                formControlName="email"/>
+              <span *ngIf="
                   (registerForm.controls['email'].dirty &&
                     registerForm.hasError('required', 'email')) ||
                   (registerForm.controls['email'].touched &&
-                    registerForm.hasError('required', 'email'))
-                "
-                class="validation-text"
-              >
-                E-mail is required!
+                    registerForm.hasError('required', 'email'))"
+                class="validation-text">E-mail is required!
               </span>
               <input
                 type="password"
@@ -50,17 +38,13 @@
                 placeholder="Password"
                 class="pass input-line full-width"
                 formControlName="password"
-                minlength="4"
-              />
-              <span
-                *ngIf="
+                minlength="4"/>
+              <span *ngIf="
                   (registerForm.controls['password'].dirty &&
                     registerForm.hasError('required', 'password')) ||
                   (registerForm.controls['password'].touched &&
-                    registerForm.hasError('required', 'password'))
-                "
-                class="validation-text"
-              >
+                    registerForm.hasError('required', 'password'))"
+                class="validation-text">
                 Password is required!
               </span>
               <input
@@ -68,26 +52,20 @@
                 autocomplete="new-password"
                 placeholder="Re - Password"
                 class="pass input-line full-width"
-                formControlName="rePass"
-              />
+                formControlName="rePass"/>
               <span
                 *ngIf="
                   (registerForm.controls['rePass'].dirty &&
                     registerForm.hasError('required', 'rePass')) ||
                   (registerForm.controls['rePass'].touched &&
-                    registerForm.hasError('required', 'rePass'))
-                "
-                class="validation-text"
-              >
+                    registerForm.hasError('required', 'rePass'))"
+                class="validation-text">
                 Re - Password is required!
               </span>
             </div>
             <div>
               <div class="">
-                <button
-                  type="submit"
-                  class="ghost-round full-width btn btn-border"
-                >
+                <button type="submit" class="ghost-round full-width btn-main">
                   Register
                 </button>
               </div>

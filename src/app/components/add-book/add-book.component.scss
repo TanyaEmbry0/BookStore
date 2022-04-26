@@ -6,20 +6,20 @@ input {
   ::-webkit-input-placeholder {
     color: rgba(255, 255, 255, 0.65);
   }
-  
-  
+
+
   .highlight {
     color: rgba(255, 255, 255, 0.8);
     font-weight: 400;
     cursor: pointer;
     transition: color .2s ease;
   }
-  
+
   .highlight:hover {
     color: #fff;
     transition: color .2s ease;
   }
-  
+
   .spacing {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
@@ -31,14 +31,14 @@ input {
     margin-top: 10px;
     color: rgba(255, 255, 255, 0.65)
   }
-  
+
   .input-line:focus {
     outline: none;
     border-color: rgb(69, 69, 70);
     -webkit-transition: all .2s ease;
     transition: all .2s ease;
   }
-  
+
   .ghost-round {
     cursor: pointer;
     background: none;
@@ -54,14 +54,14 @@ input {
     -webkit-transition: all .2s ease;
     transition: all .2s ease;
   }
-  
+
   .ghost-round:hover {
     background: #fce5b8;
     color: #333;
     -webkit-transition: all .2s ease;
     transition: all .2s ease;
   }
-  
+
   .input-line {
     background: none;
     margin-top: 20px;
@@ -73,15 +73,15 @@ input {
     -webkit-transition: all .2s ease;
     transition: all .2s ease;
   }
-  
+
   .full-width {
     width: 100%;
   }
-  
+
   .input-fields {
     margin-top: 25px;
   }
-  
+
   .container {
     display: -webkit-box;
     display: -webkit-flex;
@@ -97,9 +97,9 @@ input {
     justify-content: center;
     background: transparent;
     height: 100%;
-    background-color: #FBEDD2;
+
   }
-  
+
   .content {
     padding:25px;
     // padding-left: 25px;
@@ -113,7 +113,7 @@ input {
     flex-flow: column;
     z-index: 5;
   }
-  
+
   .form-title {
     font-weight: 200;
     margin-top: 30px;
@@ -123,7 +123,6 @@ input {
   }
   .form-window {
     z-index: 100;
-    color: rgb(43, 133, 55);
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
@@ -133,27 +132,18 @@ input {
     flex-flow: column;
     box-shadow: 0px 15px 50px 10px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
-    width: 360px;
-  
+    width: 480px;
+
   }
-  
-  .bold-line {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    margin: auto;
-    width: 100%;
-    height: 360px;
-    z-index: 1;
-    opacity:0.1;
-  }
+
+
   ::placeholder {
     color: #222222;
     opacity: 1;
   }
-  
-  
-  
+
+
+
   @media (max-width: 500px) {
     .window {
       width: 100%;
@@ -164,4 +154,3 @@ input {
       height: 100%;
     }
   }
-  

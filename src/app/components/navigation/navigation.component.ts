@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class NavigationComponent implements OnInit {
   isUserLoggedIn: boolean  = false;
-  test = this.authenticationService.isLoggedIn;
+
 
 
   constructor(private authenticationService: AuthenticationService,
