@@ -15,13 +15,11 @@
               placeholder="Book Title"
               class="input-line full-width"
               formControlName="title"/>
-
             <span
               *ngIf="
                 !addBookForm.controls['title'].valid &&
-                addBookForm.controls['title'].touched
-            " class="validation-text"
-              >Book Title is required!
+                addBookForm.controls['title'].touched"
+                class="validation-text">Book Title is required!
             </span>
             <input
               type="text"
@@ -76,13 +74,7 @@
           </div>
           <div>
             <div class="">
-              <button
-                type="submit"
-                class="ghost-round full-width btn btn-border"
-
-              >
-                Add Book
-              </button>
+              <button type="submit" class="ghost-round full-width btn-main">Add Book </button>
             </div>
           </div>
         </div>
