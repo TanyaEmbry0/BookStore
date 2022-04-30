@@ -13,6 +13,7 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root',
 })
 export class AuthenticationService {
+  // private durationTimer: any;
   //purpose of Replay subj is to have initial value of null wihout errors..
   private currentUser = new ReplaySubject<IUserInterface | null>(1);
   currentUser$ = this.currentUser.asObservable();
@@ -87,6 +88,10 @@ export class AuthenticationService {
     this.cookieService.delete('id');
     this.isUserLoggedIn();
     this.currentUser.next(null);
+    // if(this.durationTimer){
+    //   clearTimeout(this.durationTimer);
+    //   this.durationTimer=null;
+    // }
   }
 
   getUserId(): string {
@@ -96,4 +101,11 @@ export class AuthenticationService {
   getUserToken(): string {
     return this.cookieService.get('token');
   }
+  
+//   autoLogout(duration: number){
+//     console.log(duration)
+//    this.durationTimer= setTimeout(() => {
+//   this.logout()
+// }, duration);
+//   }
 }

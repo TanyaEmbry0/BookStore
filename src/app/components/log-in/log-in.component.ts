@@ -55,6 +55,8 @@ export class LogInComponent implements OnInit {
       .subscribe({
         next: (response) => {
           this.close();
+          // const durationTime = (new Date().getTime() + 1*60*60*1000) - new Date().getTime();
+          // this.authenticationService.autoLogout(durationTime);
         },
 
         error: (error) => {
